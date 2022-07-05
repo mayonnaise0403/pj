@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>網站測試</title>
+    <link rel="stylesheet" href="sideproject.css">
+    <style>
+
+        .title{
+           background-color: #143b62;
+           /*全部靠右*/
+           text-align: end;
+        }
+        
+        
+        
+        
+        .title h1{
+             color:white;
+             font-size:40px;
+             font-family:微軟正黑體;
+             text-align:center;  
+             font-weight:bold;
+             padding:30px;
+         }
+        
+         .fbyt{
+            
+            text-align: end;
+
+        }
+        
+         .fb{
+             margin:10px;
+             
+            
+              
+        }
+         .link{
+            
+            font-size:0;
+            text-align:center;
+            
+        }
+
+        .link a{
+            display:inline-block;
+            text-decoration: none;
+            color:white;
+            font-size:20px; 
+            padding:10px 50px;
+            
+            
+
+        }
+        
+        .link a:hover{
+            background-color: #011e3b;
+        }
+        
+      
+        
+        
+        
+        .content{
+          display:flex;   /*定義flex子物件*/
+          justify-content: center; /*主軸對其方式:居中*/
+          
+        }
+        
+        .box{
+            margin:10px;
+            padding:10px;
+            background-color:white;
+           
+            
+            
+            
+        }
+        
+        .box img{
+            width:300px;
+            height:400px;
+            vertical-align: top;/*垂直對其，對其上方*/
+        
+        }
+        
+        .box p{
+            position:relative;
+            text-align: center;
+            font-family:微軟正黑體;
+           
+        
+        }
+        
+        .box button{
+            background-color:#b3cccc;
+            width:80px;
+            height:30px;
+            font-family:微軟正黑體;
+            border: 0ch;
+            display:block;  /*block是垂直排列，inline是平行排列 */
+            margin:10px auto; /*auto讓物件置中*/
+            border-radius:20px; /*圓角*/
+            cursor:pointer;/*滑鼠移上去會有手指頭*/
+            
+            
+        }
+        
+        .box button:hover{
+          background-color: #006666; 
+          
+        
+        }
+        
+        
+        
+        
+        
+        </style>   
+
+
+</head>
+
+
+<body style="margin:0px" bgcolor="#669999">
+    
+    <div class="title">
+        <h1 >網站測試</h1>
+        
+        <div class="link">
+            <a href="#">連結1</a>
+            <a href="#">連結2</a>
+            <a href="#">連結3</a>
+            <a href="#">連結4</a>
+            <a href="#">連結5</a>
+        </div>
+    
+    </div>
+
+
+        <div class="fbyt">
+            <a  href="https://www.facebook.com/" target="_blank">
+                <img class="fb" src="fb.gif" width="40" alt="臉書">
+            </a>    
+            <a  href="https://www.youtube.com//" target="_blank">
+                <img class="fb" src="yt.png" width="40" alt="youtube">
+            </a> 
+            <a  href="https://twitter.com/?lang=zh-Hant" target="_blank">
+                <img class="fb" src="twitter.png" width="40" alt="推特">
+            </a> 
+        </div>
+    
+    
+
+
+<div class="content">
+    <div class="box">
+        <img  src="https://stickershop.line-scdn.net/stickershop/v1/product/1274386/LINEStorePC/main.png;compress=true"  >
+        <p ><strong>知識大問答</strong></p>
+        <button  id="trytrylook" ><strong>試試看</strong></button>
+        
+    </div>
+    <div class="box">
+        <img  src="http://img.mp.sohu.com/upload/20170811/c11ea0e67ad74338820201553b76a11b_th.png" >
+        <p ><strong>克洛德·莫內</strong></p>
+        <button  ><strong>個人簡介</strong></button>
+        <button ><strong>作品</strong></button>
+    </div>
+    <div class="box">
+        <img  src="001.jfif" >
+        <p ><strong>愛德華·馬奈</strong></p>
+        <button ><strong>個人簡介</strong></button>
+        <button ><strong>作品</strong></button>
+    </div>
+
+</div>
+
+
+
+
+
+<script>
+let aaa=document.getElementById("trytrylook");
+aaa.addEventListener("click",function(){
+    let questions=[
+{
+    qs:"下列食品中，哪個含鈣量最高？\n(1)骨頭湯\n(2)水果\n(3)葡萄糖\n(4)奶及奶制品",
+    ans:"2"
+},
+{
+    qs:"魚露是一種:\n(1)鹹味調料\n(2)甜味調料\n(3)酸味調料\n(4)鮮味調料",
+    ans:"1"
+},
+{
+    qs:"歌德寫《浮士德》用了多長時間？\n(1)30年\n(2)40年\n(3)50年\n(4)60年",
+    ans:"4"
+},
+{
+    qs:"人的五感中那個感覺反應最快？\n(1)嗅覺\n(2)視覺\n(3)聽覺\n(4)味覺",
+    ans:"4"
+},
+{
+    qs:"世界上最早的銀行始建於哪個國家？\n(1)義大利\n(2)美國\n(3)法國\n(4)瑞士",
+    ans:"1"
+}
+
+]
+    let score = 0; 
+for(let i=0 ; i < questions.length ; i++ ){
+    let input = prompt(questions[i].qs);
+    if(input==questions[i].ans){
+        score ++;
+        alert("恭喜答對了!")
+    }
+    else{
+        alert("哎呀!差一點點!")
+    }
+}    
+    alert("恭喜你答對了" + score +"題");
+}
+
+)   
+
+
+
+
+
+
+</script>
+    
+</body>
+</html>
